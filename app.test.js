@@ -7,7 +7,7 @@ describe('Unit Test (GET & POST)', () => {
         expect(res.statusCode).toBe(200)
         expect(res.text).toBe('Hello, My World!')
     })
-    test('Integration Test (POST /api/data)', async () => {
+    it('Integration Test (POST /api/data)', async () => {
         // POST data ke /api/data
         const postRes = await request(app)
             .post('/api/data')

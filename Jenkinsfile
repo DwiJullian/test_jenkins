@@ -19,18 +19,9 @@ pipeline {
                 bat 'npm test'
             }
         }
-        stage('Run Integration Tests') {
-            when {
-                branch 'main'
-            }
-            steps {
-                bat 'npm run integration-test'
-            }
-        }
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                // Tambahkan perintah build jika diperlukan
             }
         }
         stage('Deploy to Staging') {
@@ -39,7 +30,6 @@ pipeline {
             }
             steps {
                 echo 'Deploying to staging...'
-                // Perintah deploy ke server staging menggunakan SSH
                 bat 'ssh user@staging-server "cd /path/to/project && git pull && npm install && npm run build && npm start"'
             }
         }
@@ -49,7 +39,6 @@ pipeline {
             }
             steps {
                 echo 'Deploying to production...'
-                // Perintah deploy ke server production
                 bat 'ssh user@production-server "cd /path/to/project && git pull && npm install && npm run build && npm start"'
             }
         }

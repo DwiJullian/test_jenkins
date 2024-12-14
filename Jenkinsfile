@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: "${env.BRANCH_NAME}", url: 'https://github.com/DwiJullian/test_jenkins'
+                git branch: "main", url: 'https://github.com/DwiJullian/test_jenkins'
             }
         }
         stage('Install Dependencies') {

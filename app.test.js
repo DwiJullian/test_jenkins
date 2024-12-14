@@ -1,13 +1,13 @@
 const request = require('supertest')
 const app = require('./app')
 
-describe('GET & POST', () => {
+describe('Unit Test (GET & POST)', () => {
     it('responds with Hello, My World!', async () => {
         const res = await request(app).get('/')
         expect(res.statusCode).toBe(200)
         expect(res.text).toBe('Hello, My World!')
     })
-    test('End-to-end POST and GET /api/data', async () => {
+    test('Integration Test (POST /api/data)', async () => {
         // POST data ke /api/data
         const postRes = await request(app)
             .post('/api/data')

@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
+    res.send('Hello, My World!');
 });
 
 app.get('/api/data', (req, res) => {
